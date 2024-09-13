@@ -1,0 +1,202 @@
+/* Base styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #F1EFE6;
+  animation: slideIn 1s ease-in-out;
+}
+
+.logo h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #003534;
+  transition: transform 0.3s ease-in-out, color 0.3s ease;
+}
+
+.logo h1:hover {
+  transform: scale(1.1);
+  color: #004f4f;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 0.5s forwards;
+}
+
+.nav a {
+  font-size: 16px;
+  color: #1e1e1e;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav a:hover {
+  text-decoration: none;
+  color: #003534;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #003534;
+  left: -100%;
+  bottom: 0;
+  transition: left 0.4s ease;
+}
+
+.nav a:hover::after {
+  left: 0;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out 1s forwards;
+}
+
+.login {
+  background-color: transparent;
+  border: 1px solid #1e1e1e;
+  color: #1e1e1e;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.getStarted {
+  background-color: #003534;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.getStarted:hover {
+  background-color: #004f4f;
+  transform: scale(1.05);
+}
+
+.login:hover {
+  background-color: #f5f5f5;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Responsive styles */
+
+/* For tablet screens (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .header {
+    padding: 15px 30px;
+  }
+
+  .logo h1 {
+    font-size: 20px;
+  }
+
+  .nav {
+    gap: 15px;
+  }
+
+  .nav a {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .buttons .login, .buttons .getStarted {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* For mobile screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .nav a {
+    padding: 10px 0;
+    font-size: 14px;
+  }
+
+  .buttons {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .login, .getStarted {
+    width: 48%;
+    font-size: 14px;
+  }
+}
+
+/* For small mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 15px;
+  }
+
+  .logo h1 {
+    font-size: 18px;
+  }
+
+  .nav a {
+    font-size: 12px;
+    padding: 8px 0;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .login, .getStarted {
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+  }
+}

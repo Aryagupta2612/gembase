@@ -1,0 +1,251 @@
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 100px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f2e7d5, #e0cfcf);
+  background-size: 400% 400%;
+  animation: waveBackground 10s ease-in-out infinite;
+}
+
+/* Hero content */
+.heroContent {
+  position: relative;
+  margin-right: 80px;
+  max-width: 60%;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Cards container */
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 40%;
+}
+
+/* Individual card styles */
+.card {
+  background-color: #f7f3e7;
+  border-radius: 12px;
+  padding: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Card titles and content */
+.cardTitle {
+  font-size: 20px;
+  color: #003534;
+  margin-bottom: 40px;
+}
+
+.cardContent {
+  font-size: 16px;
+  color: #6a6a6a;
+}
+
+/* Heading and description */
+.subHeading {
+  font-size: 18px;
+  color: #003534;
+  letter-spacing: 1px;
+  font-weight: 600;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 0.2s forwards;
+}
+
+.mainHeading {
+  font-size: 42px;
+  color: #003534;
+  margin: 10px 0;
+  font-weight: 700;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 0.4s forwards;
+}
+
+.description {
+  font-size: 16px;
+  color: #6a6a6a;
+  margin: 20px 0;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 0.6s forwards;
+}
+
+.buttons {
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 0.8s forwards;
+}
+
+.getStarted {
+  background-color: #003534;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.getStarted:hover {
+  background-color: #004f4f;
+  transform: scale(1.05);
+}
+
+/* Spacer to maintain card layout balance */
+.spacer {
+  flex-grow: 1;
+}
+
+/* Rectangles */
+.rectanglesContainer {
+  flex-direction: column;
+  gap: 0;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 1.2s forwards;
+}
+
+.topRectangle,
+.bottomRectangle {
+  width: 300px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.topRectangle {
+  background-color: #F2EFE6;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.bottomRectangle {
+  background-color: #DEE4E4;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.topRectangle:hover,
+.bottomRectangle:hover {
+  transform: scale(1.05);
+}
+
+/* Card images and quote */
+.cardImage {
+  max-width: 100%;
+  height: auto;
+}
+
+.quote {
+  font-size: 14px;
+  font-style: italic;
+  color: #6a6a6a;
+  line-height: 1.5;
+}
+
+.quote cite {
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #4a4a4a;
+}
+
+/* Table container */
+.tableContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 79px;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes waveBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 80px 50px;
+  }
+  .heroContent {
+    margin-right: 40px;
+    max-width: 55%;
+  }
+  .cardsContainer {
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 50px 20px;
+    align-items: center;
+  }
+  .heroContent {
+    max-width: 100%;
+    text-align: center;
+    margin-right: 0;
+  }
+  .cardsContainer {
+    max-width: 100%;
+  }
+  .card {
+    padding: 30px;
+  }
+  .mainHeading {
+    font-size: 36px;
+  }
+  .subHeading {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 15px;
+  }
+  .mainHeading {
+    font-size: 28px;
+  }
+  .subHeading {
+    font-size: 14px;
+  }
+  .cardTitle {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  .cardContent {
+    font-size: 14px;
+  }
+}
