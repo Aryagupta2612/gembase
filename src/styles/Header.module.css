@@ -151,10 +151,15 @@
   }
 
   .nav {
+    display: none;
     flex-direction: column;
     gap: 10px;
     width: 100%;
     text-align: left;
+  }
+
+  .nav.active {
+    display: flex;
   }
 
   .nav a {
@@ -171,6 +176,13 @@
   .login, .getStarted {
     width: 48%;
     font-size: 14px;
+  }
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    margin-left: auto;
   }
 }
 
@@ -198,5 +210,9 @@
     width: 100%;
     padding: 10px;
     font-size: 12px;
+  }
+
+  .menu-icon {
+    font-size: 28px;
   }
 }
